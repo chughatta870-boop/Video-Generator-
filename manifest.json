@@ -1,0 +1,65 @@
+{
+  "id": ".",
+  "name": "ویڈیو میکر — Text & Picture to Video",
+  "short_name": "ویڈیو میکر",
+  "description": "متن اور تصاویر سے پروفیشنل ویڈیو بنائیں — کیپشنز، موسیقی، اور آواز کے ساتھ۔ Text & Picture to Video generator with captions, music and narration.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "orientation": "portrait",
+  "background_color": "#12141C",
+  "theme_color": "#12141C",
+  "lang": "ur",
+  "dir": "rtl",
+  "categories": ["photo", "video", "productivity"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "ٹیکسٹ سے ویڈیو",
+      "short_name": "Text to Video",
+      "description": "لکھی ہوئی کہانی سے ویڈیو بنائیں",
+      "url": "./index.html?action=text",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "تصویر سے ویڈیو",
+      "short_name": "Picture to Video",
+      "description": "اپنی تصاویر سے ویڈیو بنائیں",
+      "url": "./index.html?action=picture",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "میری ویڈیوز",
+      "short_name": "Gallery",
+      "description": "محفوظ شدہ ویڈیوز دیکھیں",
+      "url": "./index.html?action=gallery",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

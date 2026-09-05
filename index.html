@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#12141C" />
+<meta name="description" content="متن اور تصاویر سے پروفیشنل ویڈیو بنائیں — کیپشنز، بیک گراؤنڈ میوزک اور آواز کے ساتھ۔" />
+<title>ویڈیو میکر — Text &amp; Picture to Video</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Noto+Nastaliq+Urdu:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ===== Header ===== -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="26" height="26"><path d="M6 14a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V14Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M34 20l8-5v18l-8-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="14" cy="14" r="1.6" fill="currentColor"/></svg>
+      </span>
+      <div class="brand-text">
+        <h1>ویڈیو میکر</h1>
+        <p>Text &amp; Picture to Video</p>
+      </div>
+    </div>
+    <button id="btn-help" class="icon-btn" aria-label="مدد" title="مدد">؟</button>
+  </header>
+
+  <!-- ===== Screens ===== -->
+  <main class="screens">
+
+    <!-- ---------- TEXT TO VIDEO ---------- -->
+    <section id="screen-text" class="screen" data-screen>
+      <div class="screen-intro">
+        <h2>ٹیکسٹ سے ویڈیو</h2>
+        <p>اپنی کہانی یا اسکرپٹ لکھیں — ہر پیراگراف ایک منظر بنے گا اور AI اس کے لیے تصویر بنائے گا۔</p>
+      </div>
+
+      <label class="field-label" for="text-title">ویڈیو کا عنوان</label>
+      <input id="text-title" class="text-input" type="text" placeholder="مثلاً: ہمارا اسکول" maxlength="60" />
+
+      <label class="field-label" for="text-script">اسکرپٹ (ہر لائن ایک منظر ہے)</label>
+      <textarea id="text-script" class="text-area" rows="6" placeholder="ہر منظر کے لیے ایک لائن لکھیں۔&#10;مثلاً:&#10;صبح سویرے سورج طلوع ہوتا ہے&#10;بچے اسکول کی طرف جا رہے ہیں&#10;استاد کلاس میں پڑھا رہے ہیں"></textarea>
+
+      <div class="field-row">
+        <div class="field-col">
+          <label class="field-label" for="text-style">تصویری انداز</label>
+          <select id="text-style" class="select-input">
+            <option value="cinematic photo, realistic, soft light">حقیقی (Realistic)</option>
+            <option value="watercolor painting, soft colors, artistic">واٹر کلر</option>
+            <option value="3d animated cartoon, pixar style, vibrant">کارٹون 3D</option>
+            <option value="flat vector illustration, minimal, clean">فلیٹ ویکٹر</option>
+            <option value="anime style, detailed, colorful">اینیمے</option>
+          </select>
+        </div>
+        <div class="field-col">
+          <label class="field-label" for="text-ratio">تناسب (Aspect Ratio)</label>
+          <select id="text-ratio" class="select-input">
+            <option value="16:9">لینڈ اسکیپ 16:9 — YouTube</option>
+            <option value="9:16" selected>اسٹوری 9:16 — Reels/Status</option>
+            <option value="1:1">اسکوائر 1:1 — Post</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="btn-build-text" class="btn btn-primary btn-block">
+        <span>مناظر بنائیں</span>
+      </button>
+    </section>
+
+    <!-- ---------- PICTURE TO VIDEO ---------- -->
+    <section id="screen-picture" class="screen" data-screen hidden>
+      <div class="screen-intro">
+        <h2>تصویر سے ویڈیو</h2>
+        <p>اپنی تصاویر منتخب کریں، ترتیب دیں، اور ہر تصویر کے لیے کیپشن لکھیں۔</p>
+      </div>
+
+      <label class="field-label" for="pic-title">ویڈیو کا عنوان</label>
+      <input id="pic-title" class="text-input" type="text" placeholder="مثلاً: خاندانی تقریب" maxlength="60" />
+
+      <label class="upload-drop" for="pic-input">
+        <input id="pic-input" type="file" accept="image/*" multiple hidden />
+        <svg viewBox="0 0 24 24" width="30" height="30"><path d="M12 16V4M12 4l-4 4M12 4l4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>تصاویر منتخب کریں</span>
+        <small>ایک سے زیادہ تصاویر چن سکتے ہیں</small>
+      </label>
+
+      <div class="field-col">
+        <label class="field-label" for="pic-ratio">تناسب (Aspect Ratio)</label>
+        <select id="pic-ratio" class="select-input">
+          <option value="16:9">لینڈ اسکیپ 16:9 — YouTube</option>
+          <option value="9:16" selected>اسٹوری 9:16 — Reels/Status</option>
+          <option value="1:1">اسکوائر 1:1 — Post</option>
+        </select>
+      </div>
+
+      <button id="btn-build-pic" class="btn btn-primary btn-block" disabled>
+        <span>ایڈیٹر میں کھولیں</span>
+      </button>
+    </section>
+
+    <!-- ---------- GALLERY ---------- -->
+    <section id="screen-gallery" class="screen" data-screen hidden>
+      <div class="screen-intro">
+        <h2>میری ویڈیوز</h2>
+        <p>محفوظ شدہ اور بنائی گئی ویڈیوز</p>
+      </div>
+      <div id="gallery-empty" class="empty-state" hidden>
+        <svg viewBox="0 0 48 48" width="40" height="40"><rect x="6" y="10" width="28" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M34 20l8-5v18l-8-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <p>ابھی کوئی ویڈیو محفوظ نہیں۔ پہلی ویڈیو بنائیں!</p>
+      </div>
+      <div id="gallery-list" class="gallery-list"></div>
+    </section>
+
+  </main>
+
+  <!-- ===== Bottom Nav ===== -->
+  <nav class="bottom-nav">
+    <button class="nav-btn is-active" data-nav="text" aria-label="ٹیکسٹ سے ویڈیو">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>ٹیکسٹ</span>
+    </button>
+    <button class="nav-btn" data-nav="picture" aria-label="تصویر سے ویڈیو">
+      <svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="1.6" fill="currentColor"/><path d="M4 17l5-5 4 4 3-3 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span>تصویر</span>
+    </button>
+    <button class="nav-btn" data-nav="gallery" aria-label="میری ویڈیوز">
+      <svg viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="6" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17 10l4-2.5v11L17 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span>میری ویڈیوز</span>
+    </button>
+  </nav>
+</div>
+
+<!-- ===== Scene Editor (full screen overlay) ===== -->
+<div id="editor" class="overlay" hidden>
+  <header class="overlay-bar">
+    <button id="editor-close" class="icon-btn" aria-label="بند کریں">✕</button>
+    <h2 id="editor-title">ایڈیٹر</h2>
+    <button id="editor-render" class="btn btn-accent btn-sm">بنائیں ►</button>
+  </header>
+
+  <div class="overlay-body">
+    <div id="scene-list" class="scene-list"></div>
+    <input id="editor-pic-input" type="file" accept="image/*" multiple hidden />
+    <button id="btn-add-scene" class="btn btn-ghost btn-block">+ نیا منظر شامل کریں</button>
+
+    <div class="settings-card">
+      <h3>موسیقی و آواز</h3>
+      <label class="upload-drop compact" for="music-input">
+        <input id="music-input" type="file" accept="audio/*" hidden />
+        <span id="music-label">بیک گراؤنڈ میوزک شامل کریں (اختیاری)</span>
+      </label>
+      <div id="music-chip" class="chip" hidden><span id="music-name"></span><button id="music-remove" aria-label="ہٹائیں">✕</button></div>
+
+      <div class="row-between">
+        <label for="mic-toggle">اپنی آواز ریکارڈ کریں (Voiceover)</label>
+        <input type="checkbox" id="mic-toggle" class="switch" />
+      </div>
+      <div class="row-between">
+        <label for="caption-toggle">اسکرین پر کیپشن دکھائیں</label>
+        <input type="checkbox" id="caption-toggle" class="switch" checked />
+      </div>
+      <div class="row-between">
+        <label for="watermark-toggle">M Ijaz · GHS 124/NB واٹر مارک</label>
+        <input type="checkbox" id="watermark-toggle" class="switch" checked />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Render / Playback Overlay ===== -->
+<div id="render-overlay" class="overlay overlay-center" hidden>
+  <div class="render-box">
+    <canvas id="render-canvas" width="720" height="1280"></canvas>
+    <div id="render-status">
+      <div class="spinner" aria-hidden="true"></div>
+      <p id="render-status-text">تیار ہو رہا ہے…</p>
+      <div class="progress-track"><div id="render-progress" class="progress-fill"></div></div>
+    </div>
+    <div id="render-result" class="render-result" hidden>
+      <video id="result-video" controls playsinline></video>
+      <div class="result-actions">
+        <button id="btn-save" class="btn btn-primary">محفوظ کریں</button>
+        <button id="btn-download" class="btn btn-secondary">ڈاؤن لوڈ</button>
+        <button id="btn-share" class="btn btn-secondary">شیئر</button>
+      </div>
+      <button id="btn-render-close" class="btn btn-ghost btn-block">بند کریں</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Toast ===== -->
+<div id="toast" class="toast" hidden></div>
+
+<!-- ===== Help Sheet ===== -->
+<div id="help-sheet" class="overlay overlay-sheet" hidden>
+  <div class="sheet">
+    <header class="overlay-bar">
+      <button id="help-close" class="icon-btn" aria-label="بند کریں">✕</button>
+      <h2>مدد</h2>
+      <span></span>
+    </header>
+    <div class="sheet-body">
+      <p><strong>ٹیکسٹ سے ویڈیو:</strong> اسکرپٹ لکھیں، ہر لائن ایک منظر بنے گی اور AI خودکار تصویر بنائے گا۔</p>
+      <p><strong>تصویر سے ویڈیو:</strong> اپنی تصاویر چنیں اور ترتیب دیں۔</p>
+      <p><strong>ایڈیٹر:</strong> ہر منظر کا دورانیہ، کیپشن، اور ترتیب تبدیل کریں۔ میوزک یا اپنی آواز شامل کریں۔</p>
+      <p><strong>محفوظ کریں:</strong> ویڈیو آپ کے فون میں IndexedDB کے ذریعے محفوظ ہوتی ہے — "میری ویڈیوز" میں دیکھیں، ڈاؤن لوڈ، شیئر، یا ڈیلیٹ کریں۔</p>
+      <p class="muted">نوٹ: ٹیکسٹ سے ویڈیو کے لیے انٹرنیٹ درکار ہے (AI تصویر سازی کے لیے)۔ تصویر سے ویڈیو انٹرنیٹ کے بغیر بھی کام کرتی ہے۔</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
